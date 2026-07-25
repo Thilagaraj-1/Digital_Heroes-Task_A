@@ -1,0 +1,126 @@
+.lead-table__wrapper {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow-x: auto;
+  box-shadow: var(--shadow-sm);
+}
+
+.lead-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 720px;
+}
+
+.lead-table th {
+  text-align: left;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-ink-soft);
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--color-border);
+  background: #f9fafc;
+}
+
+.lead-table td {
+  padding: 14px 16px;
+  font-size: 14px;
+  border-bottom: 1px solid var(--color-border);
+  vertical-align: top;
+}
+
+.lead-table tr:last-child td {
+  border-bottom: none;
+}
+
+.lead-table__message {
+  max-width: 280px;
+  color: var(--color-ink-soft);
+}
+
+.lead-table__budget {
+  display: inline-block;
+  background: var(--color-primary-soft);
+  color: var(--color-primary-dark);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.lead-table__status {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 7px 10px;
+  font-size: 13px;
+  font-weight: 600;
+  background: #fff;
+}
+
+.lead-table__status--new {
+  color: var(--color-primary-dark);
+}
+
+.lead-table__status--contacted {
+  color: #a86416;
+}
+
+.lead-table__status--closed {
+  color: #0f7a5f;
+}
+
+.lead-table__empty {
+  background: var(--color-surface);
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 48px 24px;
+  text-align: center;
+  color: var(--color-ink-soft);
+}
+
+@media (max-width: 640px) {
+  .lead-table__wrapper {
+    overflow-x: visible;
+  }
+
+  .lead-table,
+  .lead-table thead,
+  .lead-table tbody,
+  .lead-table tr,
+  .lead-table td {
+    display: block;
+    width: 100%;
+    min-width: 0;
+  }
+
+  .lead-table thead {
+    display: none;
+  }
+
+  .lead-table tr {
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .lead-table td {
+    border-bottom: none;
+    padding: 6px 0;
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    text-align: right;
+  }
+
+  .lead-table td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: var(--color-ink-soft);
+    text-align: left;
+  }
+
+  .lead-table__message {
+    max-width: none;
+  }
+}
